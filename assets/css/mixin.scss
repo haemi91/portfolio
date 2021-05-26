@@ -1,0 +1,130 @@
+@charset "utf-8";
+
+@mixin clearfix{
+  &:after{
+    display: block;
+    content:"";
+    clear:both;
+  }
+}
+
+//색상
+$masterColor: #131554;
+$masterWiteColor: #fff;
+$masterBlackColor: #000;
+$masterGrayColor: #666;
+$lightGrayColor: #999;
+$darkGray: #333;
+$borderColor: #eee;
+$grayFontColor: #ccc;
+$footerColor: #252525;
+$masterFontColor: #555;
+$etcColor: #bbb;
+$backgroundColor: #f8f8f8;
+$strongColor: #df2222;
+
+// Mediaquery break point
+$tabletPoint:992px;
+$mobilePoint:640px;
+$mobDevicePoint:414px;
+
+// mediaQuery breaking point :: 반응형 변곡점 설정
+@mixin breakPoint($point:null, $minpoint:0px) {
+	@media all and ( min-width: #{$minpoint} ) and ( max-width: #{$point} ) {
+		@content;
+	}
+}
+
+/* boxsizing*/ 
+@mixin boxsizing(){
+	-webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+/* input area */
+@mixin inputBox($widht: 100%,$hiehgt:30px,$borderColor:$grayFontColor){
+	width: $widht; height: $hiehgt;
+	border: 1px solid;
+	border-color: $borderColor;
+	padding-left: 5px; background: $masterWiteColor;
+	box-sizing: border-box; line-height: $hiehgt - 2px;
+} 
+
+// transform property
+@mixin transition($property...) {
+    -moz-transition:$property;
+    -o-transition: $property;
+    -webkit-transition: $property;
+    transition: $property;
+}
+@mixin transform($transforms) {
+	-webkit-transform: $transforms;
+	-moz-transform: $transforms;
+	-ms-transform: $transforms;
+	transform: $transforms;
+}
+@mixin animation($animation) {
+	-webkit-animation: $animation;
+	-moz-animation: $animation;
+	-ms-animation: $animation;
+	animation: $animation;
+}
+
+@mixin position($position,$top,$right,$bottom,$left){
+	position: $position;
+	top:$top;
+	right: $right;
+	bottom: $bottom;
+	left:$left;
+}
+@mixin translate ($x:0%, $y:0%) {
+	@include transform(translate($x, $y));
+}
+@mixin midCenter($pos:absolute){
+	position:$pos;
+	top:50%; left:50%;
+	@include translate(-50%, -50%);
+}
+@mixin midCenterAbs{
+	position:absolute;
+	top:0; bottom:0; left:0; right:0;
+	margin:auto;
+}
+// placeholder
+@mixin placeholder {
+  &::-webkit-input-placeholder {@content};
+  &:-moz-placeholder           {@content};
+  &::-moz-placeholder          {@content};
+  &:-ms-input-placeholder      {@content};
+}
+
+// Abbreviation :: 말줄임처리
+@mixin Abbreviation {
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space:nowrap;
+}
+@mixin multiEllipsis($lineNumber, $lineHeight: 1.4em) {
+    overflow: hidden;
+    text-overflow:ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: $lineNumber;
+    -webkit-box-orient: vertical;
+    line-height: $lineHeight;
+    height: $lineNumber * $lineHeight;
+}
+
+// portfolio image style
+
+@mixin backgroundImg($imgName:null,$imgType:jpg){
+	background-image:url(../images/#{$imgName}.#{$imgType});
+	background-position: center top;
+	background-size: cover;
+}
+
+@mixin backgroundPosition(){
+	-moz-transition: background-position 2000ms ease-in-out;
+	-webkit-transition: background-position 2000ms ease-in-out;
+	-ms-transition: background-position 2000ms ease-in-out;
+	transition: background-position 2000ms ease-in-out;
+}

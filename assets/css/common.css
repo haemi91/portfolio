@@ -1,0 +1,207 @@
+@charset "UTF-8";
+/* 
+* ------------------------------- 
+* common style
+* ------------------------------- 
+*/
+
+/* ==================== common stylings ====================== */
+
+/* display style =================================== */
+.dspInblc{display: inline-block !important;}
+.dspBlc{display: block !important;}
+.dspNone{display: none !important;}
+.dspTable{display: table !important;}
+.dispFlex{display: flex!important;}
+
+/* position style =================================== */
+.position-a {position:absolute !important}
+.position-r {position:relative !important}
+.position-s {position:static !important}
+.position-f {position:fixed !important}
+
+/* float style =================================== */
+.fl{float: left !important;}
+.fr{float:right !important;}
+.fnone {float:none !important;}
+
+/* width style =================================== */
+.wp100 {width:100% !important}
+.wauto{width:auto!important;}
+.w100 {width:100px !important}
+.min-w100{min-width:100px!important;}
+
+/* height style =================================== */
+.hgtAuto{height:auto!important;}
+.hgt150 {height:100px !important}
+.hp100 {height:100% !important}
+.hv100 {height:100vh !important}
+.min-hgt100 {min-height:100px !important}
+
+/* margin style =================================== */
+
+/* margin */
+.mauto {margin: 0 auto !important;}
+.mg0{margin: 0!important;}
+.mg5{margin: 5px!important;}
+
+/* margin-top */
+.mt0 {margin-top:0 !important}
+.mtm5 {margin-top:-5px !important}
+
+/* margin-bottom */
+.mb0 {margin-bottom:0 !important}
+.mbm5 {margin-bottom:-5px !important}
+
+/* margin-top margin-bottom */
+.mv5 {margin-top:5px !important;margin-bottom:5px !important}
+.mv10 {margin-top:10px !important;margin-bottom:10px !important}
+
+/* margin-left */
+.ml0 {margin-left:0 !important}
+.mlm5 {margin-left:-5px !important}
+
+/* margin-right */
+.mr0 {margin-right:0 !important}
+.mr5 {margin-right:5px !important}
+
+/* margin-left margin-right */
+.mw5 {margin-left:5px !important;margin-right:5px !important}
+.mw10 {margin-left:10px !important;margin-right:10px !important}
+
+/* padding style =================================== */
+
+/* padding */
+.pd0 {padding:0px !important}
+
+/* padding-top */
+.pt0 {padding-top:0px !important}
+
+/* padding-bottom */
+.pb0{padding-bottom:0 !important}
+
+/* padding-left */
+.pl0  {padding-left:0px !important}
+
+/* padding-right */
+.pr0  {padding-right:0 !important}
+
+/* padding-top padding-bottom */
+.pv0 {padding-top:0 !important;padding-bottom:0 !important}
+
+/* padding-left padding-right */
+.pw0 {padding-left:0 !important;padding-right:0 !important}
+
+/* background color style =================================== */
+.bg-c-f{background: #fff!important;}
+.bg-c-eb{background: #ebebeb!important;}
+
+/* border style =================================== */
+
+/* border */
+.border-a{border:1px solid #ccc!important;}
+.border-t{border-top:1px solid #ccc!important;}
+.border-r{border-right:1px solid #ccc!important;}
+.border-b{border-bottom:1px solid #ccc!important;}
+.border-l{border-left:1px solid #ccc!important;}
+
+/* border none */
+.border-n{border:none !important; }
+.borderTop{border-top:none !important;}
+.borderLeft{border-left:none !important;}
+.borderRight{border-right:none !important;}
+.borderBtm{border-bottom:none !important;}
+
+.border-t-e8{border-top:1px solid #e8e6e6!important}
+.border-r-e8{border-right:1px solid #e8e6e6!important}
+
+/* borderRadius */
+.borderRadius-n{border-radius:0!important;}
+.borderRadius-5{border-radius:5px!important;}
+
+/* overflow style =================================== */
+.scrolly {overflow:scroll;overflow-x:hidden}
+.scrollx {overflow:scroll;overflow-y:hidden}
+.scrollh {overflow:hidden!important;}
+.scrollauto {overflow:auto;overflow-x:hidden}
+
+/* opacity style =================================== */
+.opacity1{opacity: 1;}
+.opacity09{opacity: 0.9;}
+.opacity08{opacity: 0.8;}
+.opacity07{opacity: 0.7;}
+.opacity06{opacity: 0.6;}
+.opacity05{opacity: 0.5;}
+.opacity04{opacity: 0.4;}
+.opacity03{opacity: 0.3;}
+.opacity02{opacity: 0.2;}
+.opacity01{opacity: 0.1;}
+
+/* font style =================================== */
+
+/* font weight */
+.fontBold {font-weight:bold !important}
+.fontNormal {font-weight:normal !important}
+
+/* font size */
+.font-small {font-size:12px !important}
+.font-11 {font-size:11px !important}
+.font-12 {font-size:12px !important}
+.font-13 {font-size:13px !important}
+.font-14 {font-size:14px !important}
+.font-15 {font-size:15px !important}
+
+/* font color */
+.font-c-r {color: #ce0000!important}
+.font-c-r2 {color: #ff4f4f!important}
+.font-c-r3 {color: #ee4242!important}
+.font-c-r4 {color: #fa0000!important;}
+.font-c-r5 {color: #ff0000!important;}
+.font-c-r6 {color: #d9534f!important;}
+.font-c-0 {color:#000 !important}
+.font-c-3 {color:#333 !important}
+.font-c-5 {color:#555 !important}
+.font-c-6 {color:#666 !important}
+.font-c-7 {color:#777 !important;}
+.font-c-9 {color:#999 !important;}
+.font-c-ae {color:#aeaeae !important;}
+.font-c-e5 {color:#e5e5e5 !important;}
+.font-c-dsb {color: #dcdcdc!important;}
+.font-c-1c {color:#1c1c1c !important;}
+.font-c-c3 {color: #c3c3c3!important;}
+.font-c-b {color: #0070f0!important;}
+.font-c-sb {color: #28bcec!important;}
+.font-c-b2 {color: #2195df!important;}
+.font-c-b3 {color: #1a92d1!important;}
+.font-c-g{color: #068a9f!important;}
+
+/* line height */
+.lh20 {line-height:20px !important}
+.lh2 {line-height:1.2 !important}
+.lh4 {line-height:1.4 !important}
+
+/* after,before style =================================== */
+.afterNone:after{display: none!important;}
+.beforeNone:before{display: none!important;}
+
+/* text-align style =================================== */
+.txtCenter{text-align: center !important;}
+.txtLeft{text-align: left !important;}
+.txtRight{text-align: right !important;}
+
+/* vertical-align style =================================== */
+.verTop{vertical-align: top !important;}
+.verTxtTop{vertical-align: text-top !important;}
+.verBtm{vertical-align: bottom !important;}
+.verTxtBtm{vertical-align: text-bottom !important;}
+.verMiddle{vertical-align: middle !important;}
+.verInherit{vertical-align: inherit !important;}
+.verSub{vertical-align: sub !important;}
+
+/* cursor style =================================== */
+.cursorPointer {cursor: pointer!important;}
+.cursorNot{cursor: not-allowed!important;}
+.cursorDefault{cursor: default!important;}
+
+/* justify-content style =================================== */
+.flexEnd{justify-content:flex-end!important;}

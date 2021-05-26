@@ -1,0 +1,22 @@
+@charset "utf-8";
+
+@mixin font-face($name, $weight, $path) {
+  @font-face{
+    font-family:NanumSquare;
+    font-weight: $weight;
+    src:url($path + ".eot");
+    src:url($path + ".eot?#iefix") format('embedded-opentype'),
+    url($path + ".woff") format('woff');
+  }
+}
+// Lato korean
+@include font-face("Lato", 400, "../font/Lato-Regular");
+@include font-face("Lato", 400, "../font/Lato-Light");
+@include font-face("Lato", 500, "../font/Lato-Medium");
+@include font-face("Lato", 700, "../font/Lato-Bold");
+@include font-face("Lato", 700, "../font/Lato-Black");
+
+// nanumsquare korean
+@include font-face("nanumsquare",300,"../font/NanumSquareL");
+@include font-face("nanumsquare", 400, "../font/NanumSquareR");
+@include font-face("nanumsquare", 700, "../font/NanumSquareB");

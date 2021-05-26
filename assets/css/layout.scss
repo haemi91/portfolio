@@ -1,0 +1,450 @@
+@charset "utf-8";
+
+/* ===================
+copyright 이해미 all rigths reserved
+-------------------------------------
+The writer : 이해미
+====================*/
+
+/*-----------------------------------------------------------------------------------------------------------------------------------------------------------
+    File   : layout.css
+    CSS 적용순서 : 아이디 > 태그와 클래스 > 클래스 > 태그
+    CSS 선택자 선언순서 : Type Selector, Layout Selector, Class Selector, Etc
+    CSS 속성 선언순서 :box-sizing, display, position(top, right, bottom, left, z-index), float/clear, overflow, width/height, margin/padding(top, right, bottom, left),
+    border(top, right, bottom, left), background(image,position,repeat,color), border-radius, box-shadow,
+    font(font-weight, font-style, font-variant, font-size/line-height, font-family), opacity, cursor, etc
+/*-----------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+@import 'reset';
+@import 'mixin';
+@import 'font';
+
+/* ====================================================
+		default css style
+========================================================= */
+/* skipNav */
+
+#skipNav { 
+	position: absolute; 
+	top: 0; 
+	left: 0; 
+	width: 100%;
+	z-index: 2000; 
+}
+#skipNav a { 
+	display: block; 
+	overflow: hidden; 
+	width: 1px; 
+	height: 1px; 
+	margin-bottom: -1px; 
+	text-align: center; 
+	color: $masterWiteColor;
+}
+#skipNav a:focus, 
+#skipNav a:active { 
+	width: 100%; 
+	height: auto; 
+	padding: 7px 0; 
+	background-color: #000;
+}
+
+/*-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+			
+			Depth level [ layout ]
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-*/
+
+// html, body
+html{overflow: hidden;}
+body {
+    font-family: "nanumsquare";
+	word-spacing:-0.025em;
+	@include boxsizing();
+	overflow: overlay;
+}
+
+//Group-selector target :: use extend
+%clearfix {
+	&:after {
+		content:"";
+		display:table;
+		clear:both;
+	}
+}
+
+// variable
+.container {
+	@include boxsizing();
+	padding: 0 5%;
+	margin:auto;
+	
+}
+
+/***********************************************
+			footer style
+************************************************/
+/*footer*/
+
+.footer_area{
+	@include boxsizing();
+	position:absolute;
+	bottom: 0;
+	width: 100%;
+	padding: 30px; 
+	background-color:#1e2133;
+	text-align: center;
+	p{font-size: 1.3em; color: $masterWiteColor; line-height: 30px; }
+	.address_div{
+		ul{
+			display: table;
+			margin: 20px auto 0;
+			@extend %clearfix;
+			li{
+				@include boxsizing();
+				float: left;
+				width:300px;
+				margin-right: 10px;
+				padding: 10px 20px;
+				border: 1px solid $masterWiteColor;
+				span{color: $masterWiteColor; font-size: 18px;}
+			}
+		}
+	}
+	.copyright{margin-top: 20px; color: $masterWiteColor; font-size:0.9em; }
+}
+
+/***********************************************
+				main style
+************************************************/
+/* main mainVisual */
+.main_area{
+	@include boxsizing();
+	position: relative;
+	width:100%; 
+	height:100%;
+	background-color: #1d2031;
+
+	// main border style 
+	.main_border_box {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%,-50%);
+		width: 95%;
+		height: 95%;
+		background: linear-gradient(45deg, #1d2031 20%, #1d2031 40%, #ECD08C 50%, #ECD08C 55%, #1d2031 70%, #1d2031 100%);
+		background-size: 200% auto;
+		animation: shine 7000ms linear infinite;
+		.main-element {
+			@include boxsizing();
+			display: block;
+			position: absolute;
+			top: 4px;
+			left: 4px;
+			width: 99.5%;
+			height: 99%;
+			padding: 25% 0 0 10%;
+			background:#1d2031;
+		}
+	}
+	.tit{
+		font-size: 3em;
+		font-weight: bold;
+		color: $masterWiteColor;
+		letter-spacing: 3px;
+	}
+	.tag_txt{
+		padding-top: 15px;
+		.tag{padding-right: 5px; color:$masterGrayColor;}
+	}
+}
+
+@keyframes shine {
+	to {
+		background-position: 200% center;
+	}
+}
+
+/***********************************************
+			portfoilo contens style
+************************************************/
+
+/**
+ *   portfolio, skill style
+ * ----------------------------------------------
+ */
+
+//  portfolio
+.area_wrap{
+	@include boxsizing();
+	display: flex!important; 
+	width:100%; 
+	height:100%; 
+	padding: 0 15%; 
+	background-color:#22253a;
+}
+.section{
+	@include boxsizing();
+	width: 285px;
+	height: 550px!important;
+	margin: 2% 10px 0;
+	padding: 10px;
+	background-color:#1d2137;
+	border: 10px solid #151827;
+	border-radius: 10px;
+}
+
+.inner_sec{
+	@include boxsizing();
+	position: relative;
+	width:100%; 
+	height: 100%; 
+	padding:15px;
+	background-color:#222948;
+	border-radius: 10px;
+	transition: transform 0.4s ease-in-out;
+	&:hover{transform: translateY(-20px);}
+	.head_tit{
+		font-size: 75px;
+		font-weight: bold;
+		color: $masterBlackColor;
+		text-align: right;
+	}
+	.site_tit{font-size: 0.19em; color: $etcColor;}
+	.link_txt{padding-bottom: 15px; font-size: 1.3em;font-weight: bold;}
+	.dec_box{padding-top:10px;color:$masterWiteColor;}
+	.txt{padding: 2px 0; font-size: 1.1em;}
+}
+
+.pot_img_box{
+	@include backgroundPosition(); 
+	position: absolute;
+	left: 15px;
+	bottom: 15px;
+	width:90%; 
+	height: 230px; 
+	margin-top: 15px;
+	overflow: hidden;
+	border: 1px solid #9f9f9f; 
+	border-radius:5px;
+	transition: background-position 2000ms ease-in-out;
+	&.img01{@include backgroundImg(theme01);}
+	&.img02{@include backgroundImg(theme02);}
+	&.img03{@include backgroundImg(theme03);}
+	&.img04{@include backgroundImg(theme04);}
+	&.img05{@include backgroundImg(project01);}
+	&.img06{@include backgroundImg(project02);}
+	&.img07{@include backgroundImg(project03);}
+	&.img08{@include backgroundImg(project04);}
+	&.img09{@include backgroundImg(project05);}
+	&.img10{@include backgroundImg(project06);}
+	&:hover{
+		&.img01{background-position: bottom center;}
+		&.img02{background-position: bottom center;}
+		&.img03{background-position: bottom center;}
+		&.img04{background-position: bottom center;}
+		&.img05{background-position: bottom center;}
+		&.img06{background-position: bottom center;}
+		&.img07{background-position: bottom center;}
+		&.img08{background-position: bottom center;}
+		&.img09{background-position: bottom center;}
+		&.img10{background-position: bottom center;}
+	}
+}
+
+// skill
+// skill style
+.area_mid{
+	padding: 6% 0;
+	h3{
+		padding-bottom: 20px;
+		text-align: center;
+		font-weight: bold;
+		color: $masterWiteColor;
+		font-size: 2.5em;
+		cursor: default;
+	}
+}
+
+.skill_wrap{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	margin:auto;
+	background-color:#1d2031;
+	@extend %clearfix;
+	.skillBox{
+		width: 50%;
+		margin: 3% auto 0;
+		.percent{
+			margin-bottom: 15px;
+			padding: 2px;
+			background-color: $borderColor;
+			border-radius: 15px;
+			font-size: 14px;
+			color: $masterWiteColor;
+			font-weight: bold;
+			text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+			&:before{
+				content: attr(data-skill);
+				display: inline-block;
+				background-color: #f3b0ff;
+				padding: 10px 0 10px 10px;
+				border-radius: inherit;
+			}
+			&.percent_color01{
+				&:before{background-color:#e45126;}
+			}
+			&.percent_color02{
+				&:before{background-color:#1673b6;}
+			}
+			&.percent_color03{
+				&:before{background-color: #e4a227;}
+			}
+			&.percent_color04{
+				&:before{background-color:#f0bf26;}
+			}
+			&.percent_color05{
+				&:before{background-color:#7952b3;}
+			}
+			&.basic{
+				&:before{width: 65%;}
+			}
+			&.basic_02{
+				&:before{width: 45%;}
+			}
+			&.intermediate{
+				&:before{width: 85%;}
+			}
+			&.advanced{
+				&:before{width: 95%;}
+			}
+		}
+	}
+}
+
+/***********************************************
+			    common style
+************************************************/
+
+// loading
+.loading{
+	@include position(fixed,0,0,0,0);
+	width:100%;
+	height: 100%;
+	padding-top: 50%;
+	margin:auto;
+	vertical-align: middle;
+	background-color:$masterBlackColor;
+	text-align: center;
+	z-index: 10;
+
+	strong{
+		@include animation(fade 2000ms infinite);
+		display:block;
+		margin:auto;
+		padding-bottom: 30px;
+		text-align: center;
+		font-size: 1em;
+		color:$masterWiteColor;
+	}
+
+	.stick {
+		display:inline-block;
+		width: 30px;
+		height:3px;
+		margin-left:-8px;
+		background-color:$masterWiteColor;
+		&:nth-child(n) {  
+			@include transform(rotate(30deg));
+			@include animation(fall 2000ms infinite);
+		}
+		&:nth-child(2n) {  
+			@include transform(rotate(-30deg));
+			@include animation(rise 2000ms infinite);
+		}
+	}
+}
+
+// keyframes
+@-webkit-keyframes rise {
+	50% { 
+		@include transform(rotate(30deg));
+	}
+}
+@-moz-keyframes rise {
+	50% { 
+		@include transform(rotate(30deg));
+	}
+}
+@-o-keyframes rise {
+	50% { 
+		@include transform(rotate(30deg));
+	}
+}
+@keyframes rise {
+	50% { 
+		@include transform(rotate(30deg));
+	}
+}
+
+@-webkit-keyframes fall {
+	50% { 
+		@include transform(rotate(-30deg));
+	}
+}
+@-moz-keyframes fall {
+	50% { 
+		@include transform(rotate(-30deg));
+	}
+}
+@-o-keyframes fall {
+	50% { 
+		@include transform(rotate(-30deg));
+
+	}
+}
+@keyframes fall {
+	50% { 
+		@include transform(rotate(-30deg));
+	}
+}
+
+@-webkit-keyframes fade {
+	50%{opacity:0.5}
+	100%{opacity:1}
+}
+@-moz-keyframes fade {
+	50%{opacity:0.5}
+	100%{opacity:1}
+}
+@-o-keyframes fade {
+	50%{opacity:0.5}
+	100%{opacity:1}
+}
+@keyframes fade {
+	50%{opacity:0.5}
+	100%{opacity:1}
+}
+
+// page section
+.section_area{width:100%; height: 100vh;}
+
+// slick style
+.slick-arrow{
+	position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 80px;
+    color: $masterWiteColor;
+    background: rgba(0,0,0,0.34) url(../images/move_left.png) no-repeat center;
+    border-radius: 10px;
+    font-size: 0;
+}
+.slick-prev{left: 12%;}
+.slick-next{
+	right:12%;
+	background-image: url(../images/move_right.png);
+}
+.slick-slider{user-select: auto!important;}

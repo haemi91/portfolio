@@ -1,0 +1,56 @@
+@font-face {
+  font-family: NanumSquare;
+  font-weight: 400;
+  src: url("../font/Lato-Regular.eot");
+  src: url("../font/Lato-Regular.eot?#iefix") format("embedded-opentype"), url("../font/Lato-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: NanumSquare;
+  font-weight: 400;
+  src: url("../font/Lato-Light.eot");
+  src: url("../font/Lato-Light.eot?#iefix") format("embedded-opentype"), url("../font/Lato-Light.woff") format("woff");
+}
+
+@font-face {
+  font-family: NanumSquare;
+  font-weight: 500;
+  src: url("../font/Lato-Medium.eot");
+  src: url("../font/Lato-Medium.eot?#iefix") format("embedded-opentype"), url("../font/Lato-Medium.woff") format("woff");
+}
+
+@font-face {
+  font-family: NanumSquare;
+  font-weight: 700;
+  src: url("../font/Lato-Bold.eot");
+  src: url("../font/Lato-Bold.eot?#iefix") format("embedded-opentype"), url("../font/Lato-Bold.woff") format("woff");
+}
+
+@font-face {
+  font-family: NanumSquare;
+  font-weight: 700;
+  src: url("../font/Lato-Black.eot");
+  src: url("../font/Lato-Black.eot?#iefix") format("embedded-opentype"), url("../font/Lato-Black.woff") format("woff");
+}
+
+@font-face {
+  font-family: NanumSquare;
+  font-weight: 300;
+  src: url("../font/NanumSquareL.eot");
+  src: url("../font/NanumSquareL.eot?#iefix") format("embedded-opentype"), url("../font/NanumSquareL.woff") format("woff");
+}
+
+@font-face {
+  font-family: NanumSquare;
+  font-weight: 400;
+  src: url("../font/NanumSquareR.eot");
+  src: url("../font/NanumSquareR.eot?#iefix") format("embedded-opentype"), url("../font/NanumSquareR.woff") format("woff");
+}
+
+@font-face {
+  font-family: NanumSquare;
+  font-weight: 700;
+  src: url("../font/NanumSquareB.eot");
+  src: url("../font/NanumSquareB.eot?#iefix") format("embedded-opentype"), url("../font/NanumSquareB.woff") format("woff");
+}
+/*# sourceMappingURL=font.css.map */
